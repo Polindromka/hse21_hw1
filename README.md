@@ -36,3 +36,7 @@ multiqc -o trimmed_multiqc trimmed_fastqc
 ```
 time platanus assemble -o Poil -t 1 -m 8 -f trimmed_fastq/R1_paired_end.fastq.trimmed  trimmed_fastq/R2_paired_end.fastq.trimmed 2>assemble.log
 ```
+9. Собираем скаффолды из контигов, а также из подрезанных чтений
+```
+time platanus scaffold -o Poil -t 1 -c Poil_contig.fa -IP1 trimmed_fastq/R1_paired_end.fastq.trimmed trimmed_fastq/R2_paired_end.fastq.trimmed -OP2 trimmed_fastq/R1_mate_pairs.fastq.int_trimmed trimmed_fastq/R2_mate_pairs.fastq.int_trimmed 2> scaffold.log
+```
