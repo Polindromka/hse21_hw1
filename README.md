@@ -15,3 +15,7 @@ seqtk sample -s620 oilMP_S4_L001_R2_001.fastq 1500000 > R2_mate_pairs.fastq
 ```
 ls R*.fastq | xargs -P 4 -tI{} fastqc -o fastqc {}
 ```
+4. Оцениваем качество исходных данных с помощью multiQC
+```
+ multiqc -o multiqc fastqc
+```
