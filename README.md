@@ -15,7 +15,7 @@ seqtk sample -s620 oilMP_S4_L001_R2_001.fastq 1500000 > R2_mate_pairs.fastq
 ```
 ls R*.fastq | xargs -P 4 -tI{} fastqc -o fastqc {}
 ```
-4. Оцениваем качество исходных данных с помощью multiQC
+4. Собираем отчёт с помощью multiQC
 ```
  multiqc -o multiqc fastqc
 ```
@@ -27,4 +27,8 @@ platanus_internal_trim R1_mate_pairs.fastq R2_mate_pairs.fastq
 6. Оцениваем качество подрезанных данных с помощью fastQC
 ```
 ls trimmed_fastq/* | xargs -P 4 -tI{} fastqc -o trimmed_fastqc {}
+```
+7. Собираем отчёт с помощью multiQC
+```
+multiqc -o trimmed_multiqc trimmed_fastqc
 ```
