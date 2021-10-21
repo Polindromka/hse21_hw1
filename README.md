@@ -24,3 +24,7 @@ ls R*.fastq | xargs -P 4 -tI{} fastqc -o fastqc {}
 platanus_trim R1_paired_end.fastq R2_paired_end.fastq
 platanus_internal_trim R1_mate_pairs.fastq R2_mate_pairs.fastq
 ```
+6. Оцениваем качество подрезанных данных с помощью fastQC
+```
+ls trimmed_fastq/* | xargs -P 4 -tI{} fastqc -o trimmed_fastqc {}
+```
