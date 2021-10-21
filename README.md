@@ -2,5 +2,5 @@
 Аннотация собранного генома
 1. Создание ссылок в личной папке:
 '''linux
- ls /usr/share/data-minor-bioinf/assembly/* | xargs -tI{} ln -s {}
+ ls /usr/share/data-minor-bioinf/assembly/* | xargs -tI{} ln -s {} '''
  
