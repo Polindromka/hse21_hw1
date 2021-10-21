@@ -40,3 +40,8 @@ time platanus assemble -o Poil -t 1 -m 8 -f trimmed_fastq/R1_paired_end.fastq.tr
 ```
 time platanus scaffold -o Poil -t 1 -c Poil_contig.fa -IP1 trimmed_fastq/R1_paired_end.fastq.trimmed trimmed_fastq/R2_paired_end.fastq.trimmed -OP2 trimmed_fastq/R1_mate_pairs.fastq.int_trimmed trimmed_fastq/R2_mate_pairs.fastq.int_trimmed 2> scaffold.log
 ```
+10. Выделим в отдельный файл самый длинный скаффолд
+```
+echo scaffold1_len3832152_cov231 > _tmp.txt
+seqtk subseq Poil_scaffold.fa _tmp.txt > scaffold1_len3832152_cov231.fasta
+```
