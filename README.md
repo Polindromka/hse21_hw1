@@ -32,3 +32,7 @@ ls trimmed_fastq/* | xargs -P 4 -tI{} fastqc -o trimmed_fastqc {}
 ```
 multiqc -o trimmed_multiqc trimmed_fastqc
 ```
+8. Собираем контиги из подрезанных чтений с помощью “platanus assemble”
+```
+time platanus assemble -o Poil -t 1 -m 8 -f trimmed_fastq/R1_paired_end.fastq.trimmed  trimmed_fastq/R2_paired_end.fastq.trimmed 2>assemble.log
+```
