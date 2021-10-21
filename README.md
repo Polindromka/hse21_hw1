@@ -19,3 +19,8 @@ ls R*.fastq | xargs -P 4 -tI{} fastqc -o fastqc {}
 ```
  multiqc -o multiqc fastqc
 ```
+5. Подрезаем чтения по качеству и удалям праймеры
+```
+platanus_trim R1_paired_end.fastq R2_paired_end.fastq
+platanus_internal_trim R1_mate_pairs.fastq R2_mate_pairs.fastq
+```
